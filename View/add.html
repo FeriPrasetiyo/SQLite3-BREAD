@@ -17,91 +17,85 @@
     <title>Add</title>
   </head>
   <body>
-    <!-- Mulai -->
     <h1>Add</h1>
-    <div class="add">
+    <!-- Mulai -->
+    <div class="container">
       <!-- string -->
-      <div class="row">
-        <div class="col">
-          <label for="id">String :</label>
-          <input
-            type="text"
-            name="string"
-            id="string"
-            placeholder="Tulis String"
-            required
-          />
-        </div>
+      <div class="input-group">
+        <label for="id">String :</label>
+        <input
+          style="margin-left: 15px"
+          type="text"
+          name="string"
+          id="string"
+          placeholder="Tulis String"
+          required
+        />
       </div>
       <br />
       <!-- Akhir sting -->
       <!-- integer -->
-      <div class="row">
-        <div class="col">
-          <label for="id">Integer :</label>
-          <input
-            type="number"
-            name="integer"
-            id="integer"
-            placeholder="Tulis integer"
-            required
-          />
-        </div>
+      <div class="input-group">
+        <label for="id">Integer :</label>
+        <input
+          style="margin-left: 10px"
+          type="number"
+          name="integer"
+          id="integer"
+          placeholder="Tulis integer"
+          required
+        />
       </div>
       <br />
       <!-- akhir integer -->
       <!-- float -->
-      <div class="row">
-        <div class="col">
-          <label for="id">Float :</label>
-          <input
-            type="number"
-            name="float"
-            id="float"
-            placeholder="Tulis float"
-            required
-            step="0.005"
-          />
-        </div>
+      <div class="input-group">
+        <label for="id">Float :</label>
+        <input
+          style="margin-left: 25px"
+          type="number"
+          name="float"
+          id="float"
+          placeholder="Tulis float"
+          required
+          step="0.005"
+        />
       </div>
       <br />
       <!-- akhir float -->
       <!-- Mulai date-->
-      <div class="row">
-        <div class="col">
-          <label for="id">Date :</label>
-          <input
-            type="date"
-            name="data"
-            id="data"
-            placeholder="end date"
-            required
-          />
-        </div>
+      <div class="input-group">
+        <label for="id">Date :</label>
+        <input
+          style="margin-left: 30px"
+          type="date"
+          name="data"
+          id="data"
+          placeholder="end date"
+          required
+        />
       </div>
       <br />
       <!--  Akhir date-->
       <!-- Mulai boolean -->
-      <div class="row">
-        <div class="col">
-          <label for="boolean">Boolean :</label>
-          <select
-            name="boolean"
-            id="boolean"
-          >
-            <option>Pilih</option>
-            <option value="true">True</option>
-            <option value="false">False</option>
-          </select>
-        </div>
+      <div class="input-group">
+        <label for="boolean">Boolean :</label>
+        <select
+          name="boolean"
+          id="boolean"
+        >
+          <option>Pilih</option>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
       </div>
       <br />
       <!-- akhir Boolean -->
       <button
         type="submit"
-        class="btn btn-primary"
+        class="add"
       >
-        Add
+        Save
       </button>
       <br />
       <!-- Akhir -->
