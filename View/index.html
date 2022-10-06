@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>BREAD (Browse, Read, Edit, Add, Delete)</h1>
+    <h2>Filters</h2>
+    <!-- Mulai -->
+    <div class="Document">
+      <div class="row">
+        <div class="col">
+          <div class="from-check">
+            <input
+              type="checkbox"
+              name="id"
+              id="id"
+            />
+            <label for="id">ID :</label>
+            <input
+              type="text"
+              name="id"
+              id="id"
+              placeholder="Tulis ID"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <!-- id -->
+      <br />
+      <!-- Akhir id -->
+      <!-- String -->
+      <div class="row">
+        <div class="col">
+          <div class="from-check">
+            <input
+              type="checkbox"
+              name="string"
+              id="string"
+            />
+            <label for="id">String :</label>
+            <input
+              type="text"
+              name="string"
+              id="string"
+              placeholder="Tulis String"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <br />
+      <!-- Akhir string -->
+      <!-- integer -->
+      <div class="row">
+        <div class="col">
+          <div class="from-check">
+            <input
+              type="checkbox"
+              name="integer"
+              id="integer"
+            />
+            <label for="id">Integer :</label>
+            <input
+              type="number"
+              name="integer"
+              id="integer"
+              placeholder="Tulis Integer"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <br />
+      <!-- akhir integer -->
+      <!-- float -->
+      <div class="row">
+        <div class="col">
+          <input
+            type="checkbox"
+            name="float"
+            id="float"
+          />
+          <label for="id">Float :</label>
+          <input
+            type="number"
+            name="float"
+            id="float"
+            placeholder="Tulis Float"
+            step="0.005"
+          />
+        </div>
+      </div>
+      <br />
+      <!-- akhir float -->
+      <!-- date -->
+      <div class="row">
+        <div class="col">
+          <input
+            type="checkbox"
+            name="date"
+            id="date"
+          />
+          <label for="id">Date :</label>
+          <input
+            type="date"
+            name="starDate"
+            id="starDate"
+            required=""
+          />
+          to
+          <input
+            type="date"
+            name="endDate"
+            id="endDate"
+            required=""
+          />
+        </div>
+      </div>
+      <br />
+      <!-- akhir data -->
+      <!-- Mulai boolean -->
+      <div class="row">
+        <div class="col">
+          <input
+            type="checkbox"
+            name="boolean"
+            id="boolean"
+          />
+          <label for="boolean">Boolean :</label>
+          <select
+            name="boolean"
+            id="boolean"
+          >
+            <option>Pilih</option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+          </select>
+        </div>
+      </div>
+      <br />
+      <!-- akhir boolean -->
+      <!-- Search -->
+      <button
+        type="submit"
+        class="btn btn-primary"
+      >
+        Search
+      </button>
+      <br />
+      <!-- akhir search -->
+      <!-- Table -->
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">String</th>
+                <th scope="col">Integer</th>
+                <th scope="col">Float</th>
+                <th scope="col">Date</th>
+                <th scope="col">Boolean</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+          </div>
+        </div>
+      </div>
+      <!-- Table -->
+      <!-- Navbar -->
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span class="navbar-text">1</span>
+          <span class="navbar-text">2</span>
+          <span class="navbar-text">3</span>
+        </div>
+      </nav>
+    </div>
+    <!-- Akhir navbar -->
+    <!--add -->
+    <div
+      class="container"
+      style="padding-bottom: 20px"
+    >
+      <a
+        href="/add"
+        style="color: white"
+      >
+        <button
+          type="button"
+          class="btn btn-primary"
+        >
+          Add
+        </button>
+      </a>
+    </div>
+    <!-- akhir add -->
+    <!-- akhir -->
+  </body>
+</html>
