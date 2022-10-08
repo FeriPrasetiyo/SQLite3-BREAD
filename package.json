@@ -1,0 +1,26 @@
+{
+  "name": "sqlite3-bread",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FeriPrasetiyo/SQLite3-BREAD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FeriPrasetiyo/SQLite3-BREAD/issues"
+  },
+  "homepage": "https://github.com/FeriPrasetiyo/SQLite3-BREAD#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "sqlite3": "^5.1.2"
+  }
+}
