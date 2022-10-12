@@ -1,247 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      http-equiv="X-UA-Compatible"
-      content="IE=edge"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <link
-      href="/css/style.css"
-      rel="stylesheet"
-      type="text/css"
-    />
 
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>BREAD (Browse, Read, Edit, Add, Delete)</h1>
-    <h2>Filters</h2>
-    <!-- Mulai -->
-    <div
-      class="container"
-      style="margin: 2rem"
-    >
-      <form action="" method="get">
-        <div class="col">
-          <div class="from-check">
-            <input
-              style="width: 1rem"
-              type="checkbox"
-              name="idCek" <%=query.idCek ? 'checked' : '' %>
-            />
-            <label for="id">ID :</label>
-            <input
-              style="margin-left: 40px; width: 30%; padding: 1rem; border: 1px solid black; border-radius: 5px"
-              type="text"
-              name="id"
-              id="id"
-              placeholder="Tulis ID"
-              value="<%=query.id%>"
-            />
-          </div>
-        </div>
-        <!-- id -->
-        <br />
-        <!-- Akhir id -->
-        <!-- String -->
-        <div class="col">
-          <div class="from-check">
-            <input
-              style="width: 1rem"
-              type="checkbox"
-              name="strCek" <%=query.strCek ? 'checked' : '' %>
-            />
-            <label for="string">String :</label>
-            <input
-              style="margin-left: 15px; width: 30%; padding: 1rem; border: 1px solid black; border-radius: 5px"
-              type="text"
-              name="string"
-              id="string"
-              placeholder="Tulis String"
-              value="<%=query.string%>"
-            />
-          </div>
-        </div>
-        <br />
-        <!-- Akhir string -->
-        <!-- integer -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
 
-        <div class="col">
-          <div class="from-check">
-            <input
-              style="width: 1rem"
-              type="checkbox"
-              name="intCek" <%=query.intCek ? 'checked' : '' %>
-            />
-            <label for="integer">Integer :</label>
-            <input
-              style="margin-left: 10px; width: 30%; padding: 1rem; border: 1px solid black; border-radius: 5px"
-              type="number"
-              name="integer"
-              id="integer"
-              placeholder="Tulis Integer"
-              value="<%=query.interger%>"
-            />
-          </div>
-        </div>
-        <br />
-        <!-- akhir integer -->
-        <!-- float -->
+  <title>Document</title>
+</head>
 
-        <div class="col">
-          <input
-            style="width: 1rem"
-            type="checkbox"
-            name="floatCek" <%=query.floatCek ? 'checked' : '' %>
+<body>
+  <h1>BREAD (Browse, Read, Edit, Add, Delete)</h1>
+  <h2>Filters</h2>
+  <!-- Mulai -->
+  <div class="container" style="margin: 2rem">
+    <form action="" method="get">
+      <div class="col">
+        <div class="from-check">
+          <input style="width: 1rem" type="checkbox" name="idCek" <%=query.idCek ? 'checked' : '' %>
           />
-          <label for="Float">Float :</label>
-          <input
-            style="margin-left: 20px; width: 30%; padding: 1rem; border: 1px solid black; border-radius: 5px"
-            type="number"
-            name="float"
-            id="float"
-            placeholder="Tulis Float"
-            step="0.005"
-            value="<%=query.float%>"
-          />
+          <label for="id">ID :</label>
+          <input style="margin-left: 40px; width: 30%; padding: 1rem; border: 1px solid black; border-radius: 5px"
+            type="text" name="id" id="id" placeholder="Tulis ID" value="<%= query.id %>" />
         </div>
-        <br />
-        <!-- akhir float -->
-        <!-- date -->
-
-        <div class="col">
-          <input
-            style="width: 1rem"
-            type="checkbox"
-            name="dateCek" <%=query.dateCek ? 'checked' : '' %>
-          />
-          <label for="Date">Date :</label>
-          <input
-            style="margin-left: 20px; width: 10%; padding: 1rem; border: 1px solid black; border-radius: 5px"
-            type="date"
-            name="mulaiDate"
-            id="mulaiDate"
-            value="<%=query.mulaiDate%>"
-          />
-          to
-          <input
-            style="width: 10%; padding: 1rem; border: 1px solid black; border-radius: 5px"
-            type="date"
-            name="akhirDate"
-            id="akhirDate"
-            value="<%=query.akhirDate%>"
-          />
-        </div>
-        <br />
-        <!-- akhir data -->
-        <!-- Mulai boolean -->
-
-        <div class="col">
-          <input
-            style="width: 1rem"
-            type="checkbox"
-            name="booleanCek" <%=query.booleanCek ? 'checked' : '' %>
-          />
-          <label for="boolean">Boolean :</label>
-          <select
-            style="width: 10%; padding: 6px"
-            name="boolean"
-            id="boolean"
-            value="<%=query.boolean%>"
-          >
-            <option
-            value=""
-              disabled
-              selected
-            >
-              Pilih
-            </option>
-            <option value=1 <%=query.booleans==1 ? 'selected' : ''%>>True</option>
-            <option value=0 <%=query.booleans==0 ? 'selected' : ''%>>False</option>
-          </select>
-        </div>
-        <br />
-        <!-- akhir boolean -->
-        <!-- Search -->
-        <div class="row">
-          <input type="submit" value="Search" class="add" style="margin-left: 20px; width: 10%; padding: 6px; border: 1px solid black; border-radius: 5px">
-          <a href="/" type="reset" class="delete">Reset</a>
       </div>
-        <br />
-        <!-- akhir search -->
-        <!-- Table -->
-        <div class="container">
-          <table id="customers">
-            <thead>
+      <!-- id -->
+      <br />
+      <!-- Akhir id -->
+      <!-- String -->
+      <div class="col">
+        <div class="from-check">
+          <input style="width: 1rem" type="checkbox" name="stringCek" <%=query.stringCek ? 'checked' : '' %>
+          />
+          <label for="string">String :</label>
+          <input style="margin-left: 15px; width: 30%; padding: 1rem; border: 1px solid black; border-radius: 5px"
+            type="text" name="string" id="string" placeholder="Tulis String" value="<%= query.string %>" />
+        </div>
+      </div>
+      <br />
+      <!-- Akhir string -->
+      <!-- integer -->
+
+      <div class="col">
+        <div class="from-check">
+          <input style="width: 1rem" type="checkbox" name="integerCek" <%=query.integerCek ? 'checked' : '' %>
+          />
+          <label for="integer">Integer :</label>
+          <input style="margin-left: 10px; width: 30%; padding: 1rem; border: 1px solid black; border-radius: 5px"
+            type="number" name="integer" id="integer" placeholder="Tulis Integer" value="<%= query.interger %>" />
+        </div>
+      </div>
+      <br />
+      <!-- akhir integer -->
+      <!-- float -->
+
+      <div class="col">
+        <input style="width: 1rem" type="checkbox" name="floatCek" <%=query.floatCek ? 'checked' : '' %>
+        />
+        <label for="Float">Float :</label>
+        <input style="margin-left: 20px; width: 30%; padding: 1rem; border: 1px solid black; border-radius: 5px"
+          type="number" name="float" id="float" placeholder="Tulis Float" step="0.005" value="<%= query.float %>" />
+      </div>
+      <br />
+      <!-- akhir float -->
+      <!-- date -->
+
+      <div class="col">
+        <input style="width: 1rem" type="checkbox" name="dateCek" <%=query.dateCek ? 'checked' : '' %>
+        />
+        <label for="Date">Date :</label>
+        <input style="margin-left: 20px; width: 10%; padding: 1rem; border: 1px solid black; border-radius: 5px"
+          type="date" name="mulaiDate" id="mulaiDate" value="<%= query.mulaiDate %>" />
+        to
+        <input style="width: 10%; padding: 1rem; border: 1px solid black; border-radius: 5px" type="date"
+          name="akhirDate" id="akhirDate" value="<%= query.akhirDate %>" />
+      </div>
+      <br />
+      <!-- akhir data -->
+      <!-- Mulai boolean -->
+
+      <div class="col">
+        <input style="width: 1rem" type="checkbox" name="booleanCek" <%=query.booleanCek ? 'checked' : '' %>
+        />
+        <label for="boolean">Boolean :</label>
+        <select style="width: 10%; padding: 6px" name="boolean" id="boolean" value="<%= query.boolean %>">
+          <option value="" disabled selected>
+            Pilih
+          </option>
+          <option value=true <%=query.booleans==1 ? 'selected' : '' %>>True</option>
+          <option value=false <%=query.booleans==0 ? 'selected' : '' %>>False</option>
+        </select>
+      </div>
+      <br />
+      <!-- akhir boolean -->
+      <!-- Search -->
+      <div class="row">
+        <input type="submit" value="Search" class="add"
+          style="margin-left: 20px; width: 10%; padding: 6px; border: 1px solid black; border-radius: 5px">
+        <a href="/" type="reset" class="delete">Reset</a>
+      </div>
+      <br />
+      <!-- akhir search -->
+      <!-- Table -->
+      <div class="container">
+        <table id="customers">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>ID</th>
+              <th>String</th>
+              <th>Integer</th>
+              <th>Float</th>
+              <th>Date</th>
+              <th>Boolean</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% data.forEach((item, index)=>{%>
               <tr>
-                <th>No</th>
-                <th>ID</th>
-                <th>String</th>
-                <th>Integer</th>
-                <th>Float</th>
-                <th>Date</th>
-                <th>Boolean</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% data.forEach((item, index)=>{%>
-              <tr>
-                <td><%= index + 1 %></td>
-                <td><%= item.id %></td>
-                <td><%= item.strings %></td>
-                <td><%= item.integers %></td>
-                <td><%= item.floats %></td>
-                <td><%= item.dates %></td>
-                <td><%= item.booleans == 1 ? true : false %></td>
                 <td>
-                  <a
-                    href="/edit/<%= item.id %>"
-                    class="edit"
-                    >Edit</a
-                  >
-                  <a
-                    href="/delete/<%= item.id %>"
-                    class="delete"
-                    >Delete</a
-                  >
+                  <%= index + 1 %>
+                </td>
+                <td>
+                  <%= item.id %>
+                </td>
+                <td>
+                  <%= item.strings %>
+                </td>
+                <td>
+                  <%= item.integers %>
+                </td>
+                <td>
+                  <%= item.floats %>
+                </td>
+                <td>
+                  <%= item.dates %>
+                </td>
+                <td>
+                  <%= item.booleans %>
+                </td>
+                <td>
+                  <a href="/edit/<%= item.id %>" class="edit">Edit</a>
+                  <a href="/delete/<%= item.id %>" class="delete">Delete</a>
                 </td>
               </tr>
               <%})%>
-            </tbody>
-          </table>
-        </div>
-        <br>
-        <!-- Table -->
-        <!-- Navbar -->
-      </form>
-      <div class="flex-container">
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <!-- Table -->
+      <!-- Navbar -->
+      <div class="flex-container space-x">
         <div>
-            <a class="add" href="/add">Add</a>
+          <a class="add" href="/add">Add</a>
         </div>
         <div class="pagination">
-            <%if (page !=1){%>
-                <a href="<%=url.replace(`page=${page}`, `page=${parseInt(page)-1}`)%>">&laquo;</a>
-                <%}%>
-                    <%for (let i=1; i <=pages; i++) { %>
-                        <a class="<%= i == page ? 'active' : ''%>"
-                            href="<%=url.replace(`page=${page}`, `page=${i}`)%>">
-                            <%= i %>
-                        </a>
-                        <% } %>
-                            <% if (page <=pages && page !=pages) { %>
-                                <a
-                                    href="<%=url.replace(`page=${page}`, `page=${parseInt(page)+1}`)%>">&raquo;</a>
-                                <% } %>
+          <%if (page !=1){%>
+            <a href="<%=url.replace(`page=${page}`, `page=${parseInt(page)-1}`)%>">&laquo;</a>
+            <%}%>
+              <%for (let i=1; i <=pages ; i++) { %>
+                <a class="<%= i == page ? 'active' : ''%>" href="<%=url.replace(`page=${page}`, `page=${i}`)%>">
+                  <%= i %>
+                </a>
+                <% } %>
+
+                  <%if (page <=pages && page !=pages) { %>
+                    <a href="<%=url.replace(`page=${page}`, `page=${parseInt(page)+1}`)%>">&raquo;</a>
+                    <% } %>
         </div>
-    </div>
-    </div>
-    <!-- Akhir navbar -->
-    <!-- akhir -->
-  </body>
+      </div>
+  </div>
+  </form>
+  <!-- akhir -->
+</body>
+
 </html>
