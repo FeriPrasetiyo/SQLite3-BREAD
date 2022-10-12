@@ -14,13 +14,14 @@
   <h1>BREAD (Browse, Read, Edit, Add, Delete)</h1>
   <h2>Filters</h2>
   <!-- Mulai -->
-  <div class="container" style="margin: 2rem">
-    <form action="" method="get">
+  <form action="" method="get">
+    <div class="container" style="margin: 2rem">
+      <input type="hidden" name="page" value="1">
       <div class="col">
         <div class="from-check">
           <input style="width: 1rem" type="checkbox" name="idCek" <%=query.idCek ? 'checked' : '' %>
           />
-          <label for="id">ID :</label>
+          <label for="idCek">ID :</label>
           <input style="margin-left: 40px; width: 30%; padding: 1rem; border: 1px solid black; border-radius: 5px"
             type="text" name="id" id="id" placeholder="Tulis ID" value="<%= query.id %>" />
         </div>
@@ -33,7 +34,7 @@
         <div class="from-check">
           <input style="width: 1rem" type="checkbox" name="stringCek" <%=query.stringCek ? 'checked' : '' %>
           />
-          <label for="string">String :</label>
+          <label for="stringCek">String :</label>
           <input style="margin-left: 15px; width: 30%; padding: 1rem; border: 1px solid black; border-radius: 5px"
             type="text" name="string" id="string" placeholder="Tulis String" value="<%= query.string %>" />
         </div>
@@ -46,7 +47,7 @@
         <div class="from-check">
           <input style="width: 1rem" type="checkbox" name="integerCek" <%=query.integerCek ? 'checked' : '' %>
           />
-          <label for="integer">Integer :</label>
+          <label for="integerCek">Integer :</label>
           <input style="margin-left: 10px; width: 30%; padding: 1rem; border: 1px solid black; border-radius: 5px"
             type="number" name="integer" id="integer" placeholder="Tulis Integer" value="<%= query.interger %>" />
         </div>
@@ -58,7 +59,7 @@
       <div class="col">
         <input style="width: 1rem" type="checkbox" name="floatCek" <%=query.floatCek ? 'checked' : '' %>
         />
-        <label for="Float">Float :</label>
+        <label for="floatCek">Float :</label>
         <input style="margin-left: 20px; width: 30%; padding: 1rem; border: 1px solid black; border-radius: 5px"
           type="number" name="float" id="float" placeholder="Tulis Float" step="0.005" value="<%= query.float %>" />
       </div>
@@ -83,7 +84,7 @@
       <div class="col">
         <input style="width: 1rem" type="checkbox" name="booleanCek" <%=query.booleanCek ? 'checked' : '' %>
         />
-        <label for="boolean">Boolean :</label>
+        <label for="booleanCek">Boolean :</label>
         <select style="width: 10%; padding: 6px" name="boolean" id="boolean" value="<%= query.boolean %>">
           <option value="" disabled selected>
             Pilih
@@ -101,79 +102,81 @@
         <a href="/" type="reset" class="delete">Reset</a>
       </div>
       <br />
-      <!-- akhir search -->
-      <!-- Table -->
-      <div class="container">
-        <table id="customers">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>ID</th>
-              <th>String</th>
-              <th>Integer</th>
-              <th>Float</th>
-              <th>Date</th>
-              <th>Boolean</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% data.forEach((item, index)=>{%>
-              <tr>
-                <td>
-                  <%= index + 1 %>
-                </td>
-                <td>
-                  <%= item.id %>
-                </td>
-                <td>
-                  <%= item.strings %>
-                </td>
-                <td>
-                  <%= item.integers %>
-                </td>
-                <td>
-                  <%= item.floats %>
-                </td>
-                <td>
-                  <%= item.dates %>
-                </td>
-                <td>
-                  <%= item.booleans %>
-                </td>
-                <td>
-                  <a href="/edit/<%= item.id %>" class="edit">Edit</a>
-                  <a href="/delete/<%= item.id %>" class="delete">Delete</a>
-                </td>
-              </tr>
-              <%})%>
-          </tbody>
-        </table>
-      </div>
-      <br>
-      <!-- Table -->
-      <!-- Navbar -->
-      <div class="flex-container space-x">
-        <div>
-          <a class="add" href="/add">Add</a>
-        </div>
-        <div class="pagination">
-          <%if (page !=1){%>
-            <a href="<%=url.replace(`page=${page}`, `page=${parseInt(page)-1}`)%>">&laquo;</a>
-            <%}%>
-              <%for (let i=1; i <=pages ; i++) { %>
-                <a class="<%= i == page ? 'active' : ''%>" href="<%=url.replace(`page=${page}`, `page=${i}`)%>">
-                  <%= i %>
-                </a>
-                <% } %>
-
-                  <%if (page <=pages && page !=pages) { %>
-                    <a href="<%=url.replace(`page=${page}`, `page=${parseInt(page)+1}`)%>">&raquo;</a>
-                    <% } %>
-        </div>
-      </div>
-  </div>
   </form>
+  <!-- akhir search -->
+  <!-- Table -->
+  <div class="container">
+    <table id="customers">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>ID</th>
+          <th>String</th>
+          <th>Integer</th>
+          <th>Float</th>
+          <th>Date</th>
+          <th>Boolean</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach((item, index)=>{%>
+          <tr>
+            <td>
+              <%= index + 1 %>
+            </td>
+            <td>
+              <%= item.id %>
+            </td>
+            <td>
+              <%= item.strings %>
+            </td>
+            <td>
+              <%= item.integers %>
+            </td>
+            <td>
+              <%= item.floats %>
+            </td>
+            <td>
+              <%= item.dates %>
+            </td>
+            <td>
+              <%= item.booleans %>
+            </td>
+            <td>
+              <a href="/edit/<%= item.id %>" class="edit">Edit</a>
+              <a href="/delete/<%= item.id %>" class="delete">Delete</a>
+            </td>
+          </tr>
+          <%})%>
+      </tbody>
+    </table>
+  </div>
+  <br>
+
+  <!-- Table -->
+  <!-- Navbar -->
+  <div class="flex-container space-x">
+    <div>
+      <a class="add" href="/add">Add</a>
+    </div>
+    <div class="pagination">
+      <%if (page !=1){%>
+        <a href="<%=url.replace(`page=${page}`, `page=${parseInt(page)-1}`)%>">&laquo;</a>
+        <%}%>
+          <%for (let i=1; i <=pages ; i++) { %>
+            <a class="<%= i == page ? 'active' : ''%>" href="<%=url.replace(`page=${page}`, `page=${i}`)%>">
+              <%= i %>
+            </a>
+            <% } %>
+
+              <%if (page <=pages && page !=pages) { %>
+                <a href="<%=url.replace(`page=${page}`, `page=${parseInt(page)+1}`)%>">&raquo;</a>
+                <% } %>
+    </div>
+  </div>
+  </div>
+
   <!-- akhir -->
 </body>
 
